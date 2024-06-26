@@ -1,13 +1,13 @@
-import "./header.css";
-import { memo } from "react";
+import "./Header.css";
 
-const Header = () => {
+const Header = ({ title, leftChild, rightChild }) => {
     return (
-        <div className="header">
-            <h3>오늘은 🗓️</h3>
-            <h1>{new Date().toDateString()}</h1>
+        <div className="Header">
+            <div className="header_left">{leftChild}</div>
+            <div className="header_center">{title}</div>
+            <div className="header_right">{rightChild}</div>
         </div>
     );
 };
 
-export default memo(Header);
+export default Header;
