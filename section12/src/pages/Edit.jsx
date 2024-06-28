@@ -2,15 +2,18 @@ import { useNavigate, useParams } from "react-router-dom";
 import Header from "../components/Header";
 import Button from "../components/Button";
 import Editor from "../components/Editor";
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { DiaryDispatchContext } from "../App";
 import useDiary from "../Hooks/useDiary";
+import usePageTitle from "../Hooks/usePageTitle";
 
 const Edit = () => {
     const param = useParams();
     const nav = useNavigate();
     const { onDelete, onUpdate } = useContext(DiaryDispatchContext);
     const curDiaryItem = useDiary(param.id);
+
+    usePageTitle(`${param.id}번 일기 수정`);
 
     const onClickDelete = () => {
         if (window.confirm("일기를 정말 삭제할까요? 다시 복구되지 않아요!")) {
