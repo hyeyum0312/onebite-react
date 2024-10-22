@@ -27,3 +27,5 @@ console.log(o3 === o4); // false
 // JSON.stringify()
 // - 자바스크립트 내장함수, 객체를 문자열로 변환하는 기능.
 console.log(JSON.stringify(o3) === JSON.stringify(o4)); // true
+
+// 객체간의 비교는 참조값을 통해 이루어집니다!!!
